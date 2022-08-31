@@ -2,12 +2,15 @@ package jdev.mentoria.lojavirtual.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.springframework.lang.Nullable;
 
 @Entity
 @Table(name="marca_produto")
@@ -23,6 +26,7 @@ public class MarcaProduto implements Serializable{
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_marca_produto")
 	private Long id;
 	
+	@Column(nullable = false)
 	private String nomeDesc;
 
 	public Long getId() {
